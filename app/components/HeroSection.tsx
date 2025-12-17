@@ -41,16 +41,8 @@ export default function HeroSection() {
     springConfig
   );
 
-  const translateYBackground = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 100]),
-    springConfig
-  );
   const scale = useSpring(
-    useTransform(scrollYProgress, [0, 0.5, 0.8], [1, 1.5, 1.8]),
-    springConfig
-  );
-  const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [15, 0]),
+    useTransform(scrollYProgress, [0, 0.5, 0.8], [1, 1.5, 1.5]),
     springConfig
   );
 
@@ -90,12 +82,12 @@ export default function HeroSection() {
             scale: scaleBackground,
             opacity: opacityBackground,
           }}
-          className="w-full absolute inset-0 h-screen z-10 overflow-hidden"
+          className="w-sreen absolute inset-0 h-screen z-10 overflow-hidden"
         >
           <motion.img
             style={{ translateY: scaleBGTranslateY }}
             src="/hero-section.png"
-            className="object-cover scale-150"
+            className="object-cover absolute w-full h-full top-0 left-0 scale-150"
             alt=""
           />
         </motion.div>
@@ -110,7 +102,7 @@ export default function HeroSection() {
         <div className="relative z-30 w-full pt-10 px-4 sm:px-6 lg:px-8 flex-1 flex flex-col items-center justify-center">
           <div className="max-w-6xl mx-auto w-full">
             {/* Main Title - Very Large & Bold */}
-            <div className="text-center mb-16 md:mb-24">
+            <div className="text-center mb-16 2xl:mb-24">
               <motion.h1
                 style={{
                   // opacity: opacityText1,
@@ -118,17 +110,16 @@ export default function HeroSection() {
                   // Thêm border bằng shadow
                   textShadow: "0 0px 0 #11121220, 0 1px 2px #11121220", // strong shadow border
                 }}
-                className="text-7xl text-[#2D6A4F] sm:text-8xl uppercase md:text-8xl font-black tracking-wider mb-6"
+                className="text-4xl text-[#2D6A4F] sm:text-6xl uppercase 2xl:text-8xl font-black tracking-wider mb-4 2xl:mb-6"
               >
                 NHÀ CÓ HỶ
               </motion.h1>
               <motion.h1
                 style={{
                   color: colorText2,
-
                   textShadow: "0 0px 0 #11121220, 0 1px 2px #11121220", // strong shadow border
                 }}
-                className="text-6xl text-[#620000] sm:text-6xl uppercase md:text-6xl font-black tracking-wider mb-6"
+                className="text-4xl text-[#620000] sm:text-5xl uppercase 2xl:text-6xl font-black tracking-wider mb-4 2xl:mb-6"
               >
                 18 giờ 30
               </motion.h1>
@@ -144,7 +135,7 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <motion.div className="mt-auto z-20 w-fit mx-auto flex items-end gap-4 sticky bottom-0">
+        <motion.div className="z-20 w-fit mx-auto flex items-end gap-4 sticky bottom-0">
           <motion.div
             style={{
               opacity: opacityText1,
@@ -166,7 +157,7 @@ export default function HeroSection() {
               scale,
               filter: "drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.1))",
             }}
-            className="w-140"
+            className="w-100 2xl:w-140"
             src="/hinh-cua-tui.png"
           />
           <motion.div
@@ -185,7 +176,7 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        <div className="w-full absolute inset-0 h-screen z-50 overflow-hidden">
+        {/* <div className="w-full absolute inset-0 h-screen z-50 overflow-hidden">
           <SparklesCore
             id="tsparticlesfullpage"
             background="transparent"
@@ -195,7 +186,7 @@ export default function HeroSection() {
             className="w-full h-full"
             particleColor="#FFFFFF"
           />
-        </div>
+        </div> */}
       </motion.div>
     </section>
   );

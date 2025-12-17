@@ -80,7 +80,7 @@ export default function WeddingInfo() {
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
             {weddingEvents.map((event, index) => (
               <motion.div
                 key={event.id}
@@ -170,8 +170,8 @@ export default function WeddingInfo() {
               </motion.div>
             ))}
           </div>
-          <motion.div variants={imageVariants}>
-            <img src="/hero-section.png" alt="" />
+          <motion.div variants={imageVariants} className="flex items-center justify-center">
+            <img src="/hero-section.png" alt="" className="w-full h-full object-cover" />
           </motion.div>
         </motion.div>
       </div>
