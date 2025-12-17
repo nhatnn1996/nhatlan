@@ -1,0 +1,181 @@
+"use client";
+
+import { motion } from "motion/react";
+
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
+};
+
+export default function LoveStory() {
+  const milestones = [
+    {
+      year: "2023",
+      title: "Gặp Nhau",
+      description:
+        "Hai con tim gặp nhau bởi duyên phận của cuộc đời. Từ một buổi gặp gỡ bất ngờ, tình cảm bắt đầu nảy sinh và lan tỏa.",
+      image: "/hinh1.png",
+    },
+    {
+      year: "2024",
+      title: "Yêu Thương",
+      description:
+        "Từng ngày bên nhau, tình yêu ngày càng sâu sắc. Chúng ta học cách yêu thương nhau bằng những hành động nhỏ, những lời thì thầm.",
+      image: "/hinh2.png",
+    },
+    {
+      year: "2025",
+      title: "Đính Hôn",
+      description:
+        "Anh nhân cầu hôn em và em đã đồng ý với những giọt nước mắt hạnh phúc. Tình yêu của chúng ta được công khai với cả thế giới.",
+      image: "/hinh3.png",
+    },
+    {
+      year: "2025",
+      title: "Bước Vào Hôn Nhân",
+      description:
+        "Hôm nay, chúng ta trở thành một. Những cam kết, những lời hứa sẽ được viết tiếp trong cuộc sống chung đầy màu sắc.",
+      image: "/hinh4.png",
+    },
+  ];
+
+  return (
+    <section
+      id="story"
+      className="py-16 w-full"
+      style={{ background: "#F5F1ED" }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Title */}
+        <motion.div
+          className="text-center mb-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={itemVariants}
+        >
+          <h2
+            className="text-5xl sm:text-6xl font-black uppercase tracking-wide leading-normal"
+            style={{ color: "#4A7C4E", letterSpacing: "2px" }}
+          >
+            Câu Chuyện
+            <br />
+            Tình Yêu Của Chúng Ta
+          </h2>
+        </motion.div>
+
+        {/* Timeline Milestones */}
+        <motion.div
+          className="space-y-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
+          {milestones.map((milestone, index) => (
+            <div
+              key={index}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                index % 2 !== 0 ? "lg:direction-rtl" : ""
+              }`}
+            >
+              {/* Image */}
+              <motion.div
+                className={`flex justify-center ${
+                  index % 2 !== 0 ? "lg:order-2" : ""
+                }`}
+                variants={imageVariants}
+              >
+                <div className="">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={milestone.image}
+                    alt=""
+                  />
+                </div>
+              </motion.div>
+
+              {/* Content */}
+              <motion.div
+                className={index % 2 !== 0 ? "lg:order-1" : ""}
+                variants={itemVariants}
+              >
+                <div className="mb-4">
+                  <span
+                    className="text-sm uppercase tracking-widest font-light"
+                    style={{ color: "#999999" }}
+                  >
+                    Năm {milestone.year}
+                  </span>
+                  <h3
+                    className="text-4xl font-black mt-2 uppercase"
+                    style={{ color: "#4A7C4E" }}
+                  >
+                    {milestone.title}
+                  </h3>
+                </div>
+                <p
+                  className="text-lg leading-relaxed"
+                  style={{
+                    color: "#666666",
+                    fontFamily: "'Courier New', monospace",
+                    lineHeight: "1.8",
+                  }}
+                >
+                  {milestone.description}
+                </p>
+              </motion.div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Love Message */}
+        <motion.div
+          className="mt-24 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={itemVariants}
+        >
+          <p
+            className="text-2xl italic mb-6 leading-relaxed"
+            style={{ color: "#666666", fontStyle: "italic" }}
+          >
+            "Tụi mình không yêu nhau từ cái nhìn đầu tiên,
+            <br />
+            Tụi mình yêu nhau bằng những nụ cười vui vẽ lúc trò chuyện"
+          </p>
+          <p
+            className="font-light text-lg"
+            style={{ color: "#999999", letterSpacing: "1px" }}
+          >
+            ~ Ngọc Nhất & Thủy Lan
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
