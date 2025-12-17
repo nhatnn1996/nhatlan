@@ -48,7 +48,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -163,29 +163,6 @@ export default function Footer() {
                   </p>
                 </div>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Social Media */}
-          <motion.div variants={itemVariants}>
-            <h4 className="text-sm uppercase tracking-widest font-bold mb-6">
-              Theo Dõi Chúng Tôi
-            </h4>
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all hover:scale-110"
-                  style={{
-                    background: "rgba(168, 213, 186, 0.15)",
-                    border: "1px solid rgba(168, 213, 186, 0.3)",
-                  }}
-                  title={social.label}
-                >
-                  {social.icon}
-                </a>
-              ))}
             </div>
           </motion.div>
         </motion.div>
