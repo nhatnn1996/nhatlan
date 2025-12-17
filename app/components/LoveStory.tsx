@@ -172,7 +172,7 @@ export default function LoveStory() {
             className="font-light text-lg"
             style={{ color: "#999999", letterSpacing: "1px" }}
           >
-            ~ Ngọc Nhất & Thủy Lan
+            ~ Ngọc Nhất & Thùy Lan
           </p>
         </motion.div>
       </div>

@@ -27,8 +27,8 @@ const Rowdies = RowdiesFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ngọc Nhất & Thủy Lan - Wedding",
-  description: "Trang mời cưới của Ngọc Nhất & Thủy Lan",
+  title: "Ngọc Nhất & Thùy Lan - Wedding",
+  description: "Trang mời cưới của Ngọc Nhất & Thùy Lan",
 };
 
 export default function RootLayout({

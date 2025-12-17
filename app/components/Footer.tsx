@@ -67,7 +67,7 @@ export default function Footer() {
                 className="text-3xl font-black uppercase"
                 style={{ color: "#A8D5BA" }}
               >
-                Thủy Lan
+                Thùy Lan
               </h3>
               <div
                 className="h-1 w-12 mt-3"
@@ -185,7 +185,7 @@ export default function Footer() {
             Tạo với ❤️ cho ngày đặc biệt của chúng ta
           </p>
           <p className="text-xs mb-8" style={{ color: "#6B7C6E" }}>
-            © {currentYear} Ngọc Nhất & Thủy Lan Wedding
+            © {currentYear} Ngọc Nhất & Thùy Lan Wedding
           </p>
 
           <button
