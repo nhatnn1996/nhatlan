@@ -66,7 +66,7 @@ export default function WeddingInfo() {
   return (
     <section
       id="wedding-info rowdies"
-      className="w-full py-16"
+      className="w-screen overflow-hidden py-16"
       style={{ background: "#F5F1ED" }}
     >
       <div className="w-full">
