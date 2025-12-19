@@ -7,8 +7,22 @@ import {
 import { motion } from "motion/react";
 
 export default function PhotoGallery() {
-  const IMAGES_ROW_A = ["/hinh1.png", "/hinh2.png"];
-  const IMAGES_ROW_B = ["/hinh3.png", "/hinh4.png"];
+  const IMAGES_ROW_A = [
+    "/ll-1.jpg",
+    "/ll-2.jpg",
+    "/ll-3.png",
+    "/ll-4.png",
+    "/ll-5.png",
+    "/ll-6.jpg",
+    "/ll-7.jpg",
+  ];
+  const IMAGES_ROW_B = [
+    "/lll-1.jpg",
+    "/lll-2.jpg",
+    "/lll-3.jpg",
+    "/lll-4.jpg",
+    "/lll-5.jpg",
+  ];
 
   return (
     <>
@@ -49,7 +63,7 @@ export default function PhotoGallery() {
       </section>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <ScrollVelocityContainer className="w-full">
-          <ScrollVelocityRow baseVelocity={6} direction={1} className="">
+          <ScrollVelocityRow baseVelocity={3} direction={1} className="">
             {IMAGES_ROW_A.map((src, idx) => (
               <img
                 key={idx}
@@ -61,7 +75,7 @@ export default function PhotoGallery() {
               />
             ))}
           </ScrollVelocityRow>
-          <ScrollVelocityRow baseVelocity={6} direction={-1} className="py-2">
+          <ScrollVelocityRow baseVelocity={3} direction={-1} className="py-2">
             {IMAGES_ROW_B.map((src, idx) => (
               <img
                 key={idx}

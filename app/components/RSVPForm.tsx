@@ -124,32 +124,6 @@ export default function RSVPForm() {
               Chúng mình rất mong bạn để lại thông tin để tụi mình có thể tiếp
               đón bạn chu đáo hơn.
             </p>
-
-            {/* Contact */}
-            <div className="mt-12">
-              <p
-                className="text-sm uppercase tracking-widest mb-4"
-                style={{ color: "#999999" }}
-              >
-                Có câu hỏi?
-              </p>
-              <div className="space-y-3">
-                <a
-                  href="tel:0966643223"
-                  className="flex items-center gap-3 text-gray-700 hover:text-[#4A7C4E] transition-colors"
-                >
-                  <span>📱</span>
-                  <span className="font-semibold">0966 643 223</span>
-                </a>
-                <a
-                  href="mailto:wedding@example.com"
-                  className="flex items-center gap-3 text-gray-700 hover:text-[#4A7C4E] transition-colors"
-                >
-                  <span>✉️</span>
-                  <span className="font-semibold">newbie.dev.js@gmail.com</span>
-                </a>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right Section - Form */}

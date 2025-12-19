@@ -6,6 +6,7 @@ import WeddingInfo from "./components/WeddingInfo";
 import EventDetails from "./components/EventDetails";
 import PhotoGallery from "./components/PhotoGallery";
 import RSVPForm from "./components/RSVPForm";
+import GiftSection from "./components/GiftSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
       <LoveStory />
       <PhotoGallery />
       <RSVPForm />
-
+      <GiftSection />
       <Footer />
     </main>
   );
