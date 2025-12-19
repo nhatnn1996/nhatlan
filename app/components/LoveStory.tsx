@@ -83,7 +83,7 @@ export default function LoveStory() {
           >
             Câu Chuyện
             <br />
-            Tình Yêu Của Chúng Ta
+            Tình Yêu Của Chúng Mình
           </h2>
         </motion.div>
 
