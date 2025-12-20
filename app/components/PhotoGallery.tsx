@@ -28,9 +28,10 @@ export default function PhotoGallery() {
     <>
       <section id="gallery" className="mb-4 bg-white">
         <div
-          className="min-h-[50vh] bg-cneter bg-fixed grid grid-cols-1 md:grid-cols-2"
+          className="min-h-[50vh] bg-left bg-fixed grid grid-cols-1 md:grid-cols-2"
           style={{
             backgroundImage: "url('/bg-gellery.png')",
+            // backgroundImage: "url('/hinh1.png')",
           }}
         >
           <div>

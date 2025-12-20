@@ -99,17 +99,17 @@ export default function GiftSection() {
           {giftOptions.map((gift) => (
             <motion.div key={gift.id} variants={cardVariants}>
               <div
-                className="rounded-2xl overflow-hidden shadow-lg p-8 sm:p-12 text-center"
+                className="rounded-md overflow-hidden  p-8 sm:p-12 text-center"
                 style={{
                   background: "white",
-                  boxShadow: "0 8px 30px rgba(0, 0, 0, 0.1)",
+                  // boxShadow: "0 8px 30px rgba(0, 0, 0, 0.1)",
                 }}
               >
                 {/* Icon & Name */}
                 <div className="mb-8">
-                  <div className="text-6xl mb-4 flex justify-center">
+                  {/* <div className="text-6xl mb-4 flex justify-center">
                     {gift.icon}
-                  </div>
+                  </div> */}
                   <h3
                     className="text-3xl font-black uppercase mb-2"
                     style={{ color: "#4A7C4E" }}

@@ -8,10 +8,12 @@ import PhotoGallery from "./components/PhotoGallery";
 import RSVPForm from "./components/RSVPForm";
 import GiftSection from "./components/GiftSection";
 import Footer from "./components/Footer";
+import MusicPlayer from "./components/MusicPlayer";
 
 export default function Home() {
   return (
     <main className="bg-white w-screen">
+      <MusicPlayer />
       <HeroSection />
       <WeddingInfo />
       <EventDetails />
