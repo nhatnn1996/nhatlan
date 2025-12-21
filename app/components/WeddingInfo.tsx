@@ -100,7 +100,7 @@ export default function WeddingInfo() {
                   style={{ borderColor: "#E8E4DF" }}
                 >
                   <h3
-                    className="text-2xl font-black mb-3 prompt uppercase"
+                    className="text-2xl font-black mb-3 prompt uppercase whitespace-nowrap"
                     style={{ color: "#5D5D5D" }}
                   >
                     {event.title}

@@ -1,11 +1,7 @@
 "use client";
 
-import { SparklesCore } from "@/components/ui/sparkles";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import { cn } from "@/lib/utils";
 
 export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -102,7 +98,7 @@ export default function HeroSection() {
         <div className="relative z-30 w-full pt-10 px-4 sm:px-6 lg:px-8 flex-1 flex flex-col items-center justify-center">
           <div className="max-w-6xl mx-auto w-full">
             {/* Main Title - Very Large & Bold */}
-            <div className="text-center mb-16 2xl:mb-24">
+            <div className="text-center mb-16 2xl:mb-24 relative">
               <motion.h1
                 style={{
                   // opacity: opacityText1,
@@ -132,6 +128,42 @@ export default function HeroSection() {
               >
                 Ngày 27-12-2025
               </motion.div>
+              <motion.div
+                style={{
+                  opacity: opacityText1,
+                }}
+                className="block md:hidden mt-20 text-center"
+              >
+                <h1
+                  className="text-3xl md:text-6xl whitespace-nowrap font-black tracking-wide mb-3"
+                  style={{ color: "#2D6A4F" }}
+                >
+                  NGỌC NHẤT
+                </h1>
+                <div className="text-md text-gray-500  ">18-12-1996 </div>
+              </motion.div>
+              <motion.div
+                style={{
+                  opacity: opacityText1,
+                }}
+                className="flex justify-center"
+              >
+                <img className="w-32 md:absolute md:top-full md:mt-10 md:left-1/2 md:-translate-1/2" src="/tim.png" alt="" />
+              </motion.div>
+              <motion.div
+                style={{
+                  opacity: opacityText1,
+                }}
+                className="mb-10 block md:hidden text-center"
+              >
+                <h1
+                  className="text-3xl sm:text-4xl md:text-6xl whitespace-nowrap font-black tracking-wide mb-3"
+                  style={{ color: "#2D6A4F" }}
+                >
+                  THÙY LAN
+                </h1>
+                <div className="text-md text-gray-500 ">15-08-2002 </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -140,10 +172,10 @@ export default function HeroSection() {
             style={{
               opacity: opacityText1,
             }}
-            className="mb-10"
+            className="mb-10 hidden md:block"
           >
             <h1
-              className="text-3xl sm:text-4xl w-fit md:text-6xl whitespace-nowrap font-black tracking-wide mb-3"
+              className="text-3xl  sm:text-4xl w-fit md:text-6xl whitespace-nowrap font-black tracking-wide mb-3"
               style={{ color: "#2D6A4F" }}
             >
               NGỌC NHẤT
@@ -164,7 +196,7 @@ export default function HeroSection() {
             style={{
               opacity: opacityText1,
             }}
-            className="mb-10"
+            className="mb-10 hidden md:block"
           >
             <h1
               className="text-3xl sm:text-4xl w-fit md:text-6xl whitespace-nowrap font-black tracking-wide mb-3"

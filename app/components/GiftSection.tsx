@@ -37,7 +37,7 @@ export default function GiftSection() {
       name: "Ngọc Nhất",
       role: "Chú Rể",
       icon: "💚",
-      qrCode: "/qr-code-groom.png",
+      qrCode: "/nhat.png",
       description: "Mã QR chú rể",
     },
     {
@@ -45,7 +45,7 @@ export default function GiftSection() {
       name: "Thùy Lan",
       role: "Cô Dâu",
       icon: "💕",
-      qrCode: "/qr-code-bride.png",
+      qrCode: "/lan.png",
       description: "Mã QR cô dâu",
     },
   ];
@@ -90,7 +90,7 @@ export default function GiftSection() {
 
         {/* QR Codes Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 w-full max-w-200 mx-auto gap-8 md:gap-12 "
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -129,11 +129,11 @@ export default function GiftSection() {
                   className="rounded-xl p-6 mb-8 flex items-center justify-center"
                   style={{ background: "#F9F7F5" }}
                 >
-                  <div className="w-full max-w-xs">
+                  <div className="w-full max-w-xs overflow-hidden border-5 border-white rounded-md">
                     <img
                       src={gift.qrCode}
                       alt={gift.description}
-                      className="w-full h-auto rounded-lg"
+                      className="w-full aspect-square rounded-lg scale-105"
                     />
                   </div>
                 </div>
@@ -147,16 +147,6 @@ export default function GiftSection() {
                 </p>
 
                 {/* Instructions */}
-                <div
-                  className="text-xs leading-relaxed"
-                  style={{
-                    color: "#666666",
-                    fontFamily: "'Courier New', monospace",
-                  }}
-                >
-                  <p className="mb-3">👆 Quét mã QR để gửi lời chúc</p>
-                  <p>hoặc chuyển khoản trực tiếp</p>
-                </div>
               </div>
             </motion.div>
           ))}

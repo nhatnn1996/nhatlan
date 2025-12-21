@@ -78,7 +78,7 @@ export default function LoveStory() {
           variants={itemVariants}
         >
           <h2
-            className="text-5xl sm:text-6xl font-black uppercase tracking-wide leading-normal"
+            className="text-3xl sm:text-6xl font-black uppercase tracking-wide leading-normal"
             style={{ color: "#4A7C4E", letterSpacing: "2px" }}
           >
             Câu Chuyện

@@ -35,16 +35,14 @@ export default function EventDetails() {
     },
   ];
 
-  console.log(hover);
-
   return (
     <section
       id="events"
-      className="py-16 w-full"
+      className="py-8 sm:py-12 md:py-16 w-full"
       style={{ background: "white" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:gap-10 md:gap-12 items-center">
           {/* Right Section - Carousel */}
           <div className="relative">
             {/* Navigation Buttons */}
@@ -63,7 +61,7 @@ export default function EventDetails() {
                     >
                       {/* Image Container */}
                       <div
-                        className="aspect-5/2 relative"
+                        className="aspect-square sm:aspect-video md:aspect-5/2 relative"
                         style={{
                           background:
                             "linear-gradient(135deg, #4A7C4E 0%, #6BA36B 100%)",
@@ -72,40 +70,34 @@ export default function EventDetails() {
                         <img
                           src="/nha-hang-2.jpg"
                           className="w-full h-full object-cover"
-                          alt=""
+                          alt="Nhà hàng"
                         />
                         <div className="absolute w-full h-full grid grid-cols-2 top-0 left-0">
                           <div
-                            className="w-full h-full"
+                            className="w-full h-full hidden md:block"
                             onMouseEnter={() => setHover("left")}
                           ></div>
                           <div
-                            className="w-full h-full"
+                            className="w-full h-full hidden md:block"
                             onMouseEnter={() => setHover("right")}
                           ></div>
                         </div>
+                        
+                        {/* Mobile Overlay - Static */}
                         <motion.div
                           transition={{ duration: 0.5, ease: "easeInOut" }}
-                          animate={{ x: hover === "left" ? 0 : "100%" }}
-                          className="absolute z-20 top-0 left-0 w-1/2 h-full"
+                          animate={{ 
+                            x: window.innerWidth < 768 ? 0 : (hover === "left" ? 0 : "100%") 
+                          }}
+                          className="absolute z-20 top-0 left-0 w-full md:w-1/2 h-full"
                         >
-                          <div className="bg-white/95 p-10 w-full h-full">
+                          <div className="bg-white/95 md:bg-white/95 p-4 sm:p-6 md:p-8 lg:p-10 w-full h-full overflow-y-auto md:overflow-y-visible flex flex-col justify-center">
                             <div className="">
-                              {/* <h3
-                                className="text-3xl font-black uppercase"
-                                style={{ color: "#4A7C4E" }}
-                              >
-                                Lễ Báo Hỷ
-                              </h3>
-                              <div
-                                className="h-1 w-20 mt-2"
-                                style={{ background: "#C41E3A" }}
-                              ></div> */}
                               <h2
-                                className="text-3xl sm:text-4xl font-black uppercase leading-tight mb-8"
+                                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black uppercase leading-tight mb-4 sm:mb-6 md:mb-8"
                                 style={{
                                   color: "#4A7C4E",
-                                  letterSpacing: "2px",
+                                  letterSpacing: "1px",
                                 }}
                               >
                                 Thông Tin
@@ -115,44 +107,45 @@ export default function EventDetails() {
 
                               {/* Description */}
 
-                              <div className="space-y-2 mb-4 mt-6">
-                                <p className="text-xs uppercase tracking-widest text-gray-500">
+                              <div className="space-y-2 mb-3 sm:mb-4 mt-4 sm:mt-6">
+                                <p className="text-xs sm:text-xs uppercase tracking-widest text-gray-500">
                                   ⏰ Giờ
                                 </p>
                                 <p
-                                  className="font-bold"
+                                  className="font-bold text-sm sm:text-base"
                                   style={{ color: "#4A7C4E" }}
                                 >
                                   {event.time}
                                 </p>
                               </div>
 
-                              <div className="space-y-2 mb-4">
+                              <div className="space-y-2 mb-3 sm:mb-4">
                                 <p className="text-xs uppercase tracking-widest text-gray-500">
                                   📍 Địa điểm
                                 </p>
                                 <p
-                                  className="font-bold mt-4"
+                                  className="font-bold text-sm sm:text-base mt-2 sm:mt-4"
                                   style={{ color: "#4A7C4E" }}
                                 >
                                   {event.location}
                                 </p>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-xs sm:text-sm text-gray-600 mt-2">
                                   {event.address}
                                 </p>
                               </div>
+
+                              <p
+                                className="text-gray-700 text-xs sm:text-sm mt-4 sm:mt-6"
+                                style={{
+                                  color: "#666666",
+                                  fontFamily: "'Courier New', monospace",
+                                  lineHeight: "1.6 sm:1.8",
+                                }}
+                              >
+                                Hãy cùng chúng mình chia sẻ những khoảnh khắc đặc
+                                biệt nhất trong ngày trọng đại này.
+                              </p>
                             </div>
-                            <p
-                              className="text-gray-700 text-sm"
-                              style={{
-                                color: "#666666",
-                                fontFamily: "'Courier New', monospace",
-                                lineHeight: "1.8",
-                              }}
-                            >
-                              Hãy cùng chúng mình chia sẻ những khoảnh khắc đặc
-                              biệt nhất trong ngày trọng đại này.
-                            </p>
                           </div>
                         </motion.div>
                       </div>
