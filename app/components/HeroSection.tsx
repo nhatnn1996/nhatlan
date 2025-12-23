@@ -79,7 +79,7 @@ export default function HeroSection() {
             scale: scaleBackground,
             opacity: opacityBackground,
           }}
-          className="w-sreen absolute inset-0 h-screen z-10 overflow-hidden"
+          className="w-sreen absolute inset-0 h-full z-10 overflow-hidden"
         >
           <motion.img
             style={{ translateY: scaleBGTranslateY }}
@@ -96,10 +96,10 @@ export default function HeroSection() {
               "linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 33%, rgba(0, 0, 0, 0) 100%)",
           }}
         ></motion.div>
-        <div className="relative z-30 w-full pt-10 px-4 sm:px-6 lg:px-8 flex-1 flex flex-col items-center justify-center">
+        <div className="relative z-30 w-full pt-6 md:pt-10 px-4 sm:px-6 lg:px-8 flex-1 flex flex-col items-center justify-center">
           <div className="max-w-6xl mx-auto w-full">
             {/* Main Title - Very Large & Bold */}
-            <div className="text-center mb-16 2xl:mb-24 relative">
+            <div className="text-center mb-8 2xl:mb-24 relative">
               <motion.h1
                 style={{
                   // opacity: opacityText1,
@@ -133,10 +133,10 @@ export default function HeroSection() {
                 style={{
                   opacity: opacityText1,
                 }}
-                className="block md:hidden mt-20 text-center"
+                className="block md:hidden mt-5 text-center"
               >
                 <h1
-                  className="text-3xl md:text-6xl whitespace-nowrap font-black tracking-wide mb-3"
+                  className="text-xl md:text-6xl whitespace-nowrap font-black tracking-wide mb-3"
                   style={{ color: "#2D6A4F" }}
                 >
                   NGỌC NHẤT
@@ -149,7 +149,11 @@ export default function HeroSection() {
                 }}
                 className="flex justify-center"
               >
-                <img className="w-32 md:absolute md:top-full md:mt-10 md:left-1/2 md:-translate-1/2" src="/tim.png" alt="" />
+                <img
+                  className="w-10 md:w-32 md:absolute md:top-full md:mt-10 md:left-1/2 md:-translate-1/2"
+                  src="/tim.png"
+                  alt=""
+                />
               </motion.div>
               <motion.div
                 style={{
@@ -158,7 +162,7 @@ export default function HeroSection() {
                 className="mb-10 block md:hidden text-center"
               >
                 <h1
-                  className="text-3xl sm:text-4xl md:text-6xl whitespace-nowrap font-black tracking-wide mb-3"
+                  className="text-xl sm:text-4xl md:text-6xl whitespace-nowrap font-black tracking-wide mb-3"
                   style={{ color: "#2D6A4F" }}
                 >
                   THÙY LAN
@@ -209,7 +213,7 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        <div className="w-full absolute inset-0 h-screen z-50 overflow-hidden">
+        <div className="w-full absolute inset-0 h-screen z-50 overflow-hidden pointer-events-none">
           <SparklesCore
             id="tsparticlesfullpage"
             background="transparent"
