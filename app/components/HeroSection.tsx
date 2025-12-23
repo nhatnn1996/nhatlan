@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -208,7 +209,7 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* <div className="w-full absolute inset-0 h-screen z-50 overflow-hidden">
+        <div className="w-full absolute inset-0 h-screen z-50 overflow-hidden">
           <SparklesCore
             id="tsparticlesfullpage"
             background="transparent"
@@ -218,7 +219,7 @@ export default function HeroSection() {
             className="w-full h-full"
             particleColor="#FFFFFF"
           />
-        </div> */}
+        </div>
       </motion.div>
     </section>
   );
