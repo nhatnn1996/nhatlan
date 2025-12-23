@@ -36,28 +36,28 @@ export default function LoveStory() {
       year: "2023",
       title: "Gặp Nhau",
       description:
-        "Hai con tim gặp nhau bởi duyên phận của cuộc đời. Từ một buổi gặp gỡ bất ngờ, tình cảm bắt đầu nảy sinh và lan tỏa.",
-      image: "/hinh1.png",
+        "Như định mệnh tụi mình đối diện phòng của nhau, hôm đó tụi trong nhóm các thành viên xóm trọ tụi mình đã trêu nhau.",
+      image: "/hinh-cuoi-3.png",
     },
     {
       year: "2024",
       title: "Yêu Thương",
       description:
-        "Từng ngày bên nhau, tình yêu ngày càng sâu sắc. Chúng ta học cách yêu thương nhau bằng những hành động nhỏ, những lời thì thầm.",
+        "Sau nhiều hôm trò chuyện và chia sẻ những điều vui vẻ, tụi mình đã quyết định đi chơi với nhau. Tụi mình đi ăn lẩu cua Năm Ri rồi đi xem phim người vợ cuối cùng ( Phim dỡ ác )",
       image: "/hinh2.png",
     },
     {
-      year: "2025",
+      year: "2024",
       title: "Đính Hôn",
       description:
-        "Anh nhân cầu hôn em và em đã đồng ý với những giọt nước mắt hạnh phúc. Tình yêu của chúng ta được công khai với cả thế giới.",
+        "Anh quỳ xuống thảm lau nhà rồi cầu hôn em trong sự ngỡ ngàn của em. ",
       image: "/hinh3.png",
     },
     {
       year: "2025",
       title: "Bước Vào Hôn Nhân",
       description:
-        "Hôm nay, chúng ta trở thành một. Những cam kết, những lời hứa sẽ được viết tiếp trong cuộc sống chung đầy màu sắc.",
+        "Tụi mình chính thức trở thành vợ chồng trẻ. Bắt đầu trãi nghiệm cuộc sống hôn nhân. Tụi mình vẫn còn yêu nhau lắm hé hé hé",
       image: "/hinh4.png",
     },
   ];
@@ -164,15 +164,13 @@ export default function LoveStory() {
             className="text-2xl italic mb-6 leading-relaxed"
             style={{ color: "#666666", fontStyle: "italic" }}
           >
-            "Tụi mình không yêu nhau từ cái nhìn đầu tiên,
-            <br />
-            Tụi mình yêu nhau bằng những nụ cười vui vẽ lúc trò chuyện"
+            "Thế giới này vốn dĩ ồn ào, cảm ơn vì đã là khoảng lặng dịu dàng của nhau." 
           </p>
           <p
             className="font-light text-lg"
             style={{ color: "#999999", letterSpacing: "1px" }}
           >
-            ~ Ngọc Nhất & Thùy Lan
+            ~ Ngọc Nhất - Thùy Lan
           </p>
         </motion.div>
       </div>

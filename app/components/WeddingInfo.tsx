@@ -53,7 +53,7 @@ export default function WeddingInfo() {
       id: 2,
       icon: "🌸",
       title: "Lễ Cưới Nhà Gái",
-      date: "Chủ Nhật, 06/04/2025",
+      date: "Thứ 6, 04/01/2025",
       time: "16:00 - 18:00",
       location: "Xã Vệ Giang Tỉnh Quảng Ngãi",
       address: "Tuy An, Tỉnh Phú Yên",

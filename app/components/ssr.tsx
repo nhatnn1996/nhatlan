@@ -15,8 +15,8 @@ export default function Home() {
     <main className="bg-white w-screen">
       <MusicPlayer />
       <HeroSection />
-      <WeddingInfo />
       <EventDetails />
+      <WeddingInfo />
       <LoveStory />
       <PhotoGallery />
       <RSVPForm />
