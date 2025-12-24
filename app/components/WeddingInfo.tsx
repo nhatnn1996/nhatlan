@@ -1,5 +1,6 @@
 "use client";
 
+import { BackgroundLines } from "@/components/ui/background-lines";
 import { motion } from "motion/react";
 
 // Animation Variants - Tái sử dụng cho các phần tử khác nhau
@@ -66,7 +67,7 @@ export default function WeddingInfo() {
   return (
     <section
       id="wedding-info rowdies"
-      className="w-screen overflow-hidden py-16"
+      className="w-screen overflow-hidden py-16 relative"
       style={{ background: "#F5F1ED" }}
     >
       <div className="w-full">
@@ -74,17 +75,20 @@ export default function WeddingInfo() {
 
         {/* Wedding Events Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 w-full"
+          className="grid grid-cols-1 lg:grid-cols-2 w-full relative overflow-hidden"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
+          <div className="justify-center md:h-auto flex-col px-4 w-full relative grid grid-cols-1 md:grid-cols-2 items-stretch">
+            <BackgroundLines className="w-80 h-80 top-1/2 left-1/2 opacity-50 absolute -translate-y-1/2 -translate-x-1/2 z-50 bg-transparent">
+              <div></div>
+            </BackgroundLines>
             {weddingEvents.map((event, index) => (
               <motion.div
                 key={event.id}
-                className=" overflow-hidden transition-all duration-300 hover:shadow-2xl w-full"
+                className=" overflow-hidden duration-300 hover:shadow-2xl w-full"
                 style={{
                   background: "#FFFFFF",
                   boxShadow: "0 4px 15px rgba(93, 93, 93, 0.08)",
@@ -174,11 +178,7 @@ export default function WeddingInfo() {
             variants={imageVariants}
             className="flex items-center justify-center"
           >
-            <img
-              src="/bg-hihi2.png"
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            <img src="/bg-hihi2.png" alt="" className="w-full object-cover" />
           </motion.div>
         </motion.div>
       </div>

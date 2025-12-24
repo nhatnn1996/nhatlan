@@ -186,7 +186,7 @@ export default function HeroSection() {
               NGỌC NHẤT
             </h1>
             <div className="text-md text-gray-500 text-right">
-              Ngày sinh: 18-12-1996{" "}
+              Ngày sinh: 18-12-1995{" "}
             </div>
           </motion.div>
           <motion.img

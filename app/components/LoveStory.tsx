@@ -36,28 +36,28 @@ export default function LoveStory() {
       year: "2023",
       title: "Gặp Nhau",
       description:
-        "Như định mệnh tụi mình đối diện phòng của nhau, hôm đó tụi trong nhóm các thành viên xóm trọ tụi mình đã trêu nhau.",
+        "Tụi mình vốn là hai người lạ ở đối diện phòng trọ, chỉ bắt đầu xích lại gần nhau qua những lần giúp đỡ lúc khó khăn. Từ việc chạy đi mua thuốc, lo từng bữa ăn mỗi khi đối phương đổ bệnh, đến những đêm cùng nhau thức trắng để hoàn thiện những bộ hồ sơ chất đống. Chính sự quan tâm chân thành và những lần giúp đỡ nhau kịp thời ấy đã xóa tan khoảng cách hành lang, biến hai người hàng xóm thành người thương chung lối.",
       image: "/hinh-cuoi-3.png",
     },
     {
       year: "2024",
       title: "Yêu Thương",
       description:
-        "Sau nhiều hôm trò chuyện và chia sẻ những điều vui vẻ, tụi mình đã quyết định đi chơi với nhau. Tụi mình đi ăn lẩu cua Năm Ri rồi đi xem phim người vợ cuối cùng ( Phim dỡ ác )",
+        "Sau nhiều ngày trò chuyện và chia sẻ những điều vui vẻ, tụi mình quyết định hẹn nhau đi chơi. Một nồi lẩu cua Năm Ri cho buổi tối thêm ấm, rồi cả hai kéo nhau đi xem Người vợ cuối cùng. Trớ trêu là tụi mình vào trễ, vừa ngồi xuống đã “đụng ngay” một cảnh nóng khá táo bạo, khiến cả hai không khỏi ngượng ngùng. Mà công tâm thì bộ phim cũng không hay như kỳ vọng.",
       image: "/hinh2.png",
     },
     {
       year: "2024",
       title: "Đính Hôn",
       description:
-        "Anh quỳ xuống thảm lau nhà rồi cầu hôn em trong sự ngỡ ngàn của em. ",
+        "Trong sự ngỡ ngàng tột độ của em, anh bất ngờ quỳ xuống ngay trên chiếc thảm lau nhà quen thuộc để ngỏ lời cầu hôn. Không cần nến hay hoa lộng lẫy, chính lời cầu hôn chân thành và có phần hài hước ngay tại lối đi giữa hai phòng trọ đã đánh dấu cột mốc đính hôn đầy hạnh phúc.",
       image: "/hinh3.png",
     },
     {
       year: "2025",
       title: "Bước Vào Hôn Nhân",
       description:
-        "Tụi mình chính thức trở thành vợ chồng trẻ. Bắt đầu trãi nghiệm cuộc sống hôn nhân. Tụi mình vẫn còn yêu nhau lắm hé hé hé",
+        "Tụi mình chính thức về chung một nhà và bắt đầu chuỗi ngày làm vợ chồng trẻ. Cuộc sống hôn nhân hóa ra là những trải nghiệm đầy mới mẻ: từ việc tranh nhau xem hôm nay ai rửa bát, cho đến việc phát hiện ra đối phương lúc ngủ cũng có những thói hư tật xấu lầy lội không kém gì mình. Dù thỉnh thoảng có chí chóe vì những chuyện vặt vãnh, nhưng sau tất cả, tụi mình vẫn cứ dính lấy nhau như sam và quan trọng là... vẫn còn yêu nhau lắm hé hé hé!",
       image: "/hinh4.png",
     },
   ];
@@ -164,7 +164,8 @@ export default function LoveStory() {
             className="text-2xl italic mb-6 leading-relaxed"
             style={{ color: "#666666", fontStyle: "italic" }}
           >
-            "Thế giới này vốn dĩ ồn ào, cảm ơn vì đã là khoảng lặng dịu dàng của nhau." 
+            "Thế giới này vốn dĩ ồn ào, cảm ơn vì đã là khoảng lặng dịu dàng của
+            nhau."
           </p>
           <p
             className="font-light text-lg"

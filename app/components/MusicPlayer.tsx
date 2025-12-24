@@ -2,12 +2,14 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Music2 } from "lucide-react";
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false); // <--- New State
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -37,6 +39,15 @@ export default function MusicPlayer() {
     }
   };
 
+  // New: handle initial user click to start music and allow browser autoplay
+  const handleStartMusic = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+    setIsPlaying(true);
+    setHasStarted(true);
+  };
+
   const handleProgressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTime = parseFloat(e.target.value);
     setCurrentTime(newTime);
@@ -57,9 +68,37 @@ export default function MusicPlayer() {
       {/* Audio Element */}
       <audio
         ref={audioRef}
-        src="/wedding-music.mp3"
+        src="/am-nhac.mp3"
         onEnded={() => setIsPlaying(false)}
       />
+
+      {/* Initial Play Button Overlay */}
+      {!hasStarted && (
+        <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center">
+          <div className="absolute z-60">
+            <motion.button
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.96 }}
+              onClick={handleStartMusic}
+              className="flex items-center gap-2 bg-white/80 hover:bg-white border px-5 py-2 rounded-xl shadow-lg transition-colors focus:outline-none"
+              style={{
+                backdropFilter: "blur(6px)",
+                color: "#35633A",
+                fontWeight: 700,
+                fontSize: "18px",
+                letterSpacing: "0.07em",
+              }}
+            >
+              <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M6 4l10 6-10 6V4z" />
+              </svg>
+              Bắt đầu
+            </motion.button>
+          </div>
+        </div>
+      )}
 
       {/* Music Player - Fixed Position */}
       <motion.div
@@ -67,6 +106,7 @@ export default function MusicPlayer() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5 }}
+        style={{ pointerEvents: !hasStarted ? "none" : undefined }} // Prevent interaction when blocked
       >
         <AnimatePresence mode="wait">
           {isExpanded ? (
@@ -76,7 +116,11 @@ export default function MusicPlayer() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-white rounded-2xl shadow-2xl p-6 w-80 backdrop-blur-lg bg-white/95"
+              className="rounded-lg shadow-2xl p-6 w-80 backdrop-blur-lg"
+              style={{
+                background: "white",
+                boxShadow: "0 8px 30px rgba(0, 0, 0, 0.1)",
+              }}
             >
               {/* Header */}
               <div className="flex justify-between items-center mb-6">
@@ -85,8 +129,18 @@ export default function MusicPlayer() {
                   onClick={() => setIsExpanded(false)}
                   className="text-gray-500 hover:text-gray-700 transition-colors"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
               </div>
@@ -94,50 +148,54 @@ export default function MusicPlayer() {
               {/* Album Art or Icon */}
               <div className="mb-6 flex justify-center">
                 <motion.div
-                  className="w-24 h-24 rounded-xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg"
+                  className="w-24 h-24 flex items-center justify-center shadow-lg border-2 border-white rounded-full"
                   animate={{ rotate: isPlaying ? 360 : 0 }}
-                  transition={{ duration: 20, repeat: isPlaying ? Infinity : 0, ease: "linear" }}
+                  transition={{
+                    duration: 20,
+                    repeat: isPlaying ? Infinity : 0,
+                    ease: "linear",
+                  }}
                 >
-                  <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 3v9.28c-.47-.46-1.12-.72-1.84-.72C7.33 11.56 5.6 13.29 5.6 15.28c0 1.99 1.73 3.72 3.76 3.72 2.03 0 3.76-1.73 3.76-3.72V7.00h2.6v8.28c0 2.3-1.88 4.16-4.20 4.16s-4.20-1.86-4.20-4.16c0-1.29.61-2.42 1.56-3.20V3h2.52z" />
-                  </svg>
+                  <img
+                    src="/hinh1.png"
+                    alt="Am nhac"
+                    className="w-full h-full object-cover rounded-full "
+                  />
                 </motion.div>
               </div>
 
               {/* Song Info */}
               <div className="text-center mb-6">
-                <h4 className="font-semibold text-gray-800 mb-1">Bài hát cưới</h4>
-                <p className="text-sm text-gray-500">Âm nhạc cho ngày hôm nay</p>
+                <h4 className="font-semibold text-gray-800 mb-1">
+                  Bài hát cưới
+                </h4>
+                <p className="text-sm text-gray-500">
+                  Âm nhạc cho ngày hôm nay
+                </p>
               </div>
 
-              {/* Progress Bar */}
-              <div className="mb-4">
-                <input
-                  type="range"
-                  min="0"
-                  max={duration || 0}
-                  value={currentTime}
-                  onChange={handleProgressChange}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-rose-500"
-                />
-                <div className="flex justify-between text-xs text-gray-500 mt-2">
-                  <span>{formatTime(currentTime)}</span>
-                  <span>{formatTime(duration)}</span>
-                </div>
-              </div>
-
-              {/* Controls */}
               <div className="flex justify-center gap-6">
                 <button
-                  className="w-14 h-14 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 hover:from-rose-500 hover:to-pink-600 text-white flex items-center justify-center transition-all transform hover:scale-105 shadow-lg"
+                  className="w-14 h-14 rounded-full text-white flex items-center justify-center transition-all transform hover:scale-105 shadow-lg"
+                  style={{
+                    background: "#4A7C4E",
+                  }}
                   onClick={togglePlay}
                 >
                   {isPlaying ? (
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-6 h-6"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                     </svg>
                   ) : (
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-6 h-6"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   )}
@@ -152,15 +210,28 @@ export default function MusicPlayer() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               onClick={() => setIsExpanded(true)}
-              className="w-16 h-16 rounded-full bg-gradient-to-br from-rose-400 to-pink-500 hover:from-rose-500 hover:to-pink-600 text-white flex items-center justify-center shadow-2xl transition-all transform hover:scale-110 hover:shadow-rose-400/50"
+              className="w-16 h-16 rounded-full border-4 border-white text-white flex items-center justify-center shadow-2xl hover:scale-110"
+              style={{
+                boxShadow: "0 0 20px rgba(74, 124, 78, 0.4)",
+              }}
+              onHoverStart={() => {}}
             >
               <motion.div
+                className="w-full h-full"
                 animate={{ rotate: isPlaying ? 360 : 0 }}
-                transition={{ duration: 3, repeat: isPlaying ? Infinity : 0, ease: "linear" }}
+                transition={{
+                  duration: 10,
+                  repeat: isPlaying ? Infinity : 0,
+                  ease: "linear",
+                }}
               >
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 3v9.28c-.47-.46-1.12-.72-1.84-.72C7.33 11.56 5.6 13.29 5.6 15.28c0 1.99 1.73 3.72 3.76 3.72 2.03 0 3.76-1.73 3.76-3.72V7.00h2.6v8.28c0 2.3-1.88 4.16-4.20 4.16s-4.20-1.86-4.20-4.16c0-1.29.61-2.42 1.56-3.20V3h2.52z" />
-                </svg>
+                <img
+                  src="/hinh2.png"
+                  alt="Am nhac"
+                  className="w-full h-full object-cover rounded-full opacity-90"
+                />
+                <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-4 h-4 bg-white rounded-full" />
+                <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-2.5 h-2.5 bg-black rounded-full" />
               </motion.div>
             </motion.button>
           )}
@@ -169,6 +240,3 @@ export default function MusicPlayer() {
     </>
   );
 }
-
-
-
