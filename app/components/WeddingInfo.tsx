@@ -82,7 +82,7 @@ export default function WeddingInfo() {
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
-          <div className="justify-center md:h-auto flex-col px-4 w-full relative grid grid-cols-1 md:grid-cols-2 items-stretch">
+          <div className="justify-center md:h-auto flex-col w-full relative grid grid-cols-1 md:grid-cols-2 items-stretch">
             <BackgroundLines className="w-80 h-80 top-1/2 left-1/2 opacity-50 absolute -translate-y-1/2 -translate-x-1/2 z-50 bg-transparent">
               <div></div>
             </BackgroundLines>
