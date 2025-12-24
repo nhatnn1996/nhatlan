@@ -101,7 +101,10 @@ export default function RSVPForm() {
     setSubmitted(true);
     fetch("https://cms.ninhbinhdinh.com/items/nhat_wedding", {
       method: "POST",
-      body: JSON.stringify({ data: formData }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
   };
 
