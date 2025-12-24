@@ -1,6 +1,7 @@
 "use client";
 
 import { BackgroundLines } from "@/components/ui/background-lines";
+import { SparklesCore } from "@/components/ui/sparkles";
 import { motion } from "motion/react";
 
 // Animation Variants - Tái sử dụng cho các phần tử khác nhau
@@ -176,9 +177,18 @@ export default function WeddingInfo() {
           </div>
           <motion.div
             variants={imageVariants}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center relative"
           >
-            <img src="/bg-hihi2.png" alt="" className="w-full object-cover" />
+            <img src="/bg-hihi2.png" alt="" className="w-full h-full object-cover" />
+            <SparklesCore
+              id="tsparticlesfullpage2"
+              background="transparent"
+              minSize={0.6}
+              maxSize={1.4}
+              particleDensity={100}
+              className="w-full h-full absolute z-10"
+              particleColor="#FFFFFF"
+            />
           </motion.div>
         </motion.div>
       </div>
