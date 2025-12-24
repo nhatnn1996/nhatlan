@@ -9,8 +9,20 @@ export default function MusicPlayer() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false); // <--- New State
+  const [hasStarted, setHasStarted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Disable scroll when overlay is shown, restore when started
+  useEffect(() => {
+    if (!hasStarted) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [hasStarted]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -39,13 +51,14 @@ export default function MusicPlayer() {
     }
   };
 
-  // New: handle initial user click to start music and allow browser autoplay
+  // handle initial user click to start music and allow browser autoplay
   const handleStartMusic = () => {
     if (audioRef.current) {
       audioRef.current.play();
     }
     setIsPlaying(true);
     setHasStarted(true);
+    document.body.style.overflow = ""; // just in case (safety: also in useEffect)
   };
 
   const handleProgressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,7 +87,10 @@ export default function MusicPlayer() {
 
       {/* Initial Play Button Overlay */}
       {!hasStarted && (
-        <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center">
+        <div
+          className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center"
+          style={{ overscrollBehavior: "none" }} // prevent browser rubber band scrolling
+        >
           <div className="absolute z-60">
             <motion.button
               initial={{ opacity: 0, y: -20 }}
@@ -106,7 +122,7 @@ export default function MusicPlayer() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5 }}
-        style={{ pointerEvents: !hasStarted ? "none" : undefined }} // Prevent interaction when blocked
+        style={{ pointerEvents: !hasStarted ? "none" : undefined }}
       >
         <AnimatePresence mode="wait">
           {isExpanded ? (

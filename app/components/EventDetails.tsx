@@ -82,12 +82,17 @@ export default function EventDetails() {
                             onMouseEnter={() => setHover("right")}
                           ></div>
                         </div>
-                        
+
                         {/* Mobile Overlay - Static */}
                         <motion.div
                           transition={{ duration: 0.5, ease: "easeInOut" }}
-                          animate={{ 
-                            x: window.innerWidth < 768 ? 0 : (hover === "left" ? 0 : "100%") 
+                          animate={{
+                            x:
+                              window.innerWidth < 768
+                                ? 0
+                                : hover === "left"
+                                ? 0
+                                : "100%",
                           }}
                           className="absolute z-20 top-0 left-0 w-full md:w-1/2 h-full"
                         >
@@ -132,6 +137,45 @@ export default function EventDetails() {
                                 <p className="text-xs sm:text-sm text-gray-600 mt-2">
                                   {event.address}
                                 </p>
+
+                                <a
+                                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                    event.address
+                                  )}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-lg  hover:bg-green-200 border-b-2 border-[#4a7c4e] transition-colors text-sm font-semibold"
+                                  style={{
+                                    color: "#35633A",
+                                    textDecoration: "none",
+                                  }}
+                                >
+                                  {/* Inline SVG for Map Icon */}
+                                  <svg
+                                    width="20"
+                                    height="20"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    className="w-5 h-5"
+                                    aria-hidden="true"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"
+                                    />
+                                    <circle
+                                      cx="12"
+                                      cy="10"
+                                      r="3"
+                                      stroke="currentColor"
+                                      strokeWidth="2"
+                                    />
+                                  </svg>
+                                  Xem bản đồ
+                                </a>
                               </div>
 
                               <p
@@ -142,8 +186,8 @@ export default function EventDetails() {
                                   lineHeight: "1.6 sm:1.8",
                                 }}
                               >
-                                Hãy cùng chúng mình chia sẻ những khoảnh khắc đặc
-                                biệt nhất trong ngày trọng đại này.
+                                Hãy cùng chúng mình chia sẻ những khoảnh khắc
+                                đặc biệt nhất trong ngày trọng đại này.
                               </p>
                             </div>
                           </div>
