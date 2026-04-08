@@ -1,0 +1,163 @@
+/* ═══════════════════════════════════════════════════════
+   ProMetal Landing Page — Design System
+   Brand: ProMetal (Công ty CP Hiệp Vĩnh Phú)
+   Colors extracted from logo: warm orange/golden amber
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── Design Tokens ─── */
+@layer base {
+  .prometal {
+    /* Brand — from logo */
+    --pm-orange: #E9A033;
+    --pm-orange-light: #F5C56A;
+    --pm-orange-dark: #C8871B;
+    --pm-orange-glow: rgba(233, 160, 51, 0.15);
+    --pm-orange-subtle: rgba(233, 160, 51, 0.06);
+
+    /* Dark surfaces */
+    --pm-charcoal: #111111;
+    --pm-charcoal-light: #1A1A1A;
+    --pm-charcoal-card: #222222;
+    --pm-charcoal-border: #2E2E2E;
+
+    /* Light surfaces */
+    --pm-warm-white: #FAFAF8;
+    --pm-warm-gray: #F4F2EE;
+    --pm-border-light: #E5E2DC;
+
+    /* Text */
+    --pm-text-primary: #111111;
+    --pm-text-secondary: #555555;
+    --pm-text-muted: #888888;
+    --pm-text-on-dark: #F0F0F0;
+    --pm-text-on-dark-muted: #999999;
+  }
+}
+
+/* ─── Keyframes ─── */
+@keyframes pm-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes pm-float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pm-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pm-glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes pm-slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pm-scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pm-counter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pm-gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── Utilities ─── */
+.pm-gradient-text {
+  background: linear-gradient(135deg, var(--pm-orange) 0%, var(--pm-orange-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pm-gradient-text-dark {
+  background: linear-gradient(135deg, var(--pm-orange-dark) 0%, var(--pm-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pm-glow {
+  box-shadow:
+    0 4px 24px rgba(233, 160, 51, 0.12),
+    0 0 48px rgba(233, 160, 51, 0.06);
+}
+
+.pm-glow-strong {
+  box-shadow:
+    0 8px 32px rgba(233, 160, 51, 0.2),
+    0 0 64px rgba(233, 160, 51, 0.1);
+}
+
+.pm-card-shadow {
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.pm-card-shadow-hover {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.pm-phone-shadow {
+  box-shadow:
+    0 30px 60px -15px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(233, 160, 51, 0.08);
+}
+
+/* ─── Background Patterns ─── */
+.pm-grid-pattern {
+  background-image:
+    linear-gradient(rgba(233, 160, 51, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 160, 51, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.pm-dot-pattern {
+  background-image: radial-gradient(circle, rgba(233, 160, 51, 0.06) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+
+/* ─── Smooth Scroll ─── */
+.prometal {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Selection Colors ─── */
+.prometal ::selection {
+  background: rgba(233, 160, 51, 0.25);
+  color: inherit;
+}
+
+/* ─── Scrollbar (Webkit) ─── */
+.prometal::-webkit-scrollbar {
+  width: 8px;
+}
+.prometal::-webkit-scrollbar-track {
+  background: var(--pm-charcoal);
+}
+.prometal::-webkit-scrollbar-thumb {
+  background: var(--pm-charcoal-border);
+  border-radius: 4px;
+}
+.prometal::-webkit-scrollbar-thumb:hover {
+  background: var(--pm-orange-dark);
+}
