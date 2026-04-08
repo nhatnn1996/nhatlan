@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import StatsBar from "./components/StatsBar";
 import BusinessImpact from "./components/BusinessImpact";
-import GrowthFeatures from "./components/GrowthFeatures";
+import DataIntelligence from "./components/DataIntelligence";
 import EcosystemFeatures from "./components/EcosystemFeatures";
 import CoreFeatures from "./components/CoreFeatures";
 import ForWho from "./components/ForWho";
@@ -19,13 +19,13 @@ export default function ProMetalPage() {
       <Navbar />
       <Hero />
       <StatsBar />
-      <BusinessImpact />
-      <GrowthFeatures />
-      <EcosystemFeatures />
-      <CoreFeatures />
-      <ForWho />
       <HowItWorks />
+      <CoreFeatures />
       <MembershipTiers />
+      <EcosystemFeatures />
+      <DataIntelligence />
+      <BusinessImpact />
+      <ForWho />
       <FAQ />
       <DownloadCTA />
       <Footer />

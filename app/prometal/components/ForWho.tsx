@@ -75,7 +75,6 @@ export default function ForWho() {
             style={{ fontFamily: "var(--font-pm-outfit)" }}
           >
             Được thiết kế riêng{" "}
-            <span className="pm-gradient-text-dark">cho bạn</span>
           </h2>
         </motion.div>
 
@@ -91,9 +90,8 @@ export default function ForWho() {
             <motion.div
               key={item.title}
               variants={cardVariants}
-              className={`group relative bg-white rounded-2xl p-6 sm:p-7 border border-[#E5E2DC] hover:border-[#E9A033]/40 transition-all duration-500 pm-card-shadow hover:pm-card-shadow-hover ${
-                i === 0 ? "md:mt-0" : i === 1 ? "md:mt-6" : "md:mt-12"
-              }`}
+              className={`group relative bg-white rounded-2xl p-6 sm:p-7 border border-[#E5E2DC] hover:border-[#E9A033]/40 transition-all duration-500 pm-card-shadow hover:pm-card-shadow-hover ${i === 0 ? "md:mt-0" : i === 1 ? "md:mt-6" : "md:mt-12"
+                }`}
             >
               {/* Icon */}
               <div

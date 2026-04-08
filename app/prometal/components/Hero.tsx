@@ -132,9 +132,8 @@ function PhoneMockup() {
               {["🏠", "🔍", "📷", "🎁", "👤"].map((icon, i) => (
                 <div
                   key={i}
-                  className={`text-sm ${
-                    i === 0 ? "opacity-100" : "opacity-40"
-                  }`}
+                  className={`text-sm ${i === 0 ? "opacity-100" : "opacity-40"
+                    }`}
                 >
                   {icon}
                 </div>
@@ -149,7 +148,7 @@ function PhoneMockup() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#111111]">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#0A0A0A] via-[#111111] to-[#141414]">
       {/* Background effects */}
       <div className="absolute inset-0">
         {/* Grid pattern */}
@@ -331,7 +330,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom gradient transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#FAFAF8]" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[white]" />
     </section>
   );
 }
