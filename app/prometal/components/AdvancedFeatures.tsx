@@ -118,7 +118,6 @@ export default function AdvancedFeatures() {
           {features.map((feat) => (
             <motion.div
               key={feat.title}
-              variants={cardVariants}
               className="group relative bg-white rounded-2xl p-6 border border-[#E5E2DC] hover:border-[#E9A033]/30 transition-all duration-400 pm-card-shadow hover:pm-card-shadow-hover"
             >
               {/* Left accent line */}
