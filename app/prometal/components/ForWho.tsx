@@ -89,7 +89,6 @@ export default function ForWho() {
           {audiences.map((item, i) => (
             <motion.div
               key={item.title}
-              variants={cardVariants}
               className={`group relative bg-white rounded-2xl p-6 sm:p-7 border border-[#E5E2DC] hover:border-[#E9A033]/40 transition-all duration-500 pm-card-shadow hover:pm-card-shadow-hover ${i === 0 ? "md:mt-0" : i === 1 ? "md:mt-6" : "md:mt-12"
                 }`}
             >
